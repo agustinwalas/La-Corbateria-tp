@@ -1,0 +1,30 @@
+/*!
+ * Start Bootstrap - Shop Homepage (https://startbootstrap.com/templates/shop-homepage)
+ * Copyright 2013-2020 Start Bootstrap
+ * Licensed under MIT (https://github.com/StartBootstrap/startbootstrap-shop-homepage/blob/master/LICENSE)
+ */
+body {
+  padding-top: 56px;
+}
+
+.titulo{
+	text-align: center;
+	margin: 1rem auto;
+}
+.form-control{
+	margin-bottom: 1rem;
+}
+
+.btn-primary{
+	background-color: #90A4AE !important;
+	border: 1px solid #263238 !important;
+	margin: 5% 0 !important;
+}
+.btn-primary:hover{
+	background-color: #263238 !important;
+	border: 1px solid #90A4AE !important;
+}
+
+.col-lg-6{
+	margin-bottom: 2rem !important;
+}
