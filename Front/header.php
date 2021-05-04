@@ -1,3 +1,7 @@
+<?php 
+  include('../Helpers/conection.php');
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

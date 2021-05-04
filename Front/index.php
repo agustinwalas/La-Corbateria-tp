@@ -4,16 +4,14 @@
 
   <!-- Page Content -->
   <div class="container">
-
     <div class="row">
-
       <div class="col-lg-3">
         <h1 class="my-4">Categorias</h1>
         <div class="list-group">
           <?php
-           $categorias= file_get_contents('datos/categorias.json');
-           $categoriasJson = json_decode($categorias, true);
-           foreach($categoriasJson as $cat){
+          include_once('../LogicaNegocio/CategoryBusiness.php');
+          $CatB = new CategoryBusiness($con);
+          foreach($CatB->getCategories() as $cat){
           ?>
           <a href="products.php?cat=<?php echo $cat['id']?>&marca=<?php echo isset($_GET['marca'])?$_GET['marca']:'' ?>" class="list-group-item"><?php echo $cat['nombre']?></a>
          <?php } ?> 
