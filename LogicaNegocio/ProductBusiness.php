@@ -1,8 +1,8 @@
 <?php
 
-require_once('../DataAccess/PostDAO.php');
+require_once('../DataAccess/ProductDAO.php');
 
-class PostBusiness{
+class ProductBusiness{
 
     protected $ProductDao;
 

@@ -2,7 +2,7 @@
 
 require_once ('BaseEntity.php');
 
-class PostEntity extends BaseEntity
+class ProductEntity extends BaseEntity
 {
  
     private $nombre;
