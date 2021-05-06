@@ -2,7 +2,7 @@
 
 require_once ('BaseEntity.php');
 
-class SubCategoryEntity extends BaseEntity
+class CategoryEntity extends BaseEntity
 {
     private $nombre;
 

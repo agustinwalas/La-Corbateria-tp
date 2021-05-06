@@ -9,4 +9,13 @@ class ProductBusiness{
     function __construct($con){
         $this->ProductDao = new ProductDAO($con);
     }
+
+    public function getProducts(){
+        $products = $this->ProductDao->getAll(); 
+
+        return $products;
+    }
+
+
+
 }

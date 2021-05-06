@@ -13,16 +13,16 @@ class ProductDAO extends DAO{
     function __construct($con)
     {
         parent::__construct($con);
-        $this->table = 'product';
+        $this->table = 'products';
         $this->UserDao = new UserDAO($con);
         $this->CategoryDao = new CategoryDAO($con);
     }
 
     public function getOne($id){
-        $sql = "SELECT id,fechaCreacion,fechaModificacion,titulo,entrada,autor,categoria FROM $this->table WHERE id = $id";
+        $sql = "SELECT id,fechaCreacion,fechaModificacion,nombre,descripcion,imagen,categoria,marca FROM $this->table WHERE id = $id";
         $resultado = $this->con->query($sql,PDO::FETCH_CLASS,'productEntity')->fetch();
         
-        $resultado->setAutor($this->UserDao->getOne($resultado->getAutor()));
+        $resultado->setMarca($this->UserDao->getOne($resultado->getMarca()));
         $resultado->setCategoria($this->CategoryDao->getOne($resultado->getCategoria()));
         
         return $resultado;
@@ -33,8 +33,8 @@ class ProductDAO extends DAO{
 
         $sqlWhereStr = ' WHERE 1=1 ';
 
-        if(!empty($where['autor'])){
-            $sqlWhereStr.= ' AND autor = '.$where['autor'];
+        if(!empty($where['marca'])){
+            $sqlWhereStr.= ' AND marca = '.$where['marca'];
         }
         if(!empty($where['cat'])){
             $sqlWhereStr .= ' AND categoria = '.$where['cat'];
@@ -55,9 +55,9 @@ class ProductDAO extends DAO{
         $sql = "SELECT  id,
                         fechaCreacion,
                         fechaModificacion,
-                        titulo,
-                        entrada,
-                        autor,
+                        nombre,
+                        descripcion,
+                        marca,
                         categoria 
                 FROM $this->table".$sqlWhereStr;
 
